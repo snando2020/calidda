@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cálidda Recibos y Pagos</title>
+<meta name="description" content="Prototipo funcional del módulo Recibos y Pagos de la app Cálidda. Grupo 6 - UPC.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="estilos.css">
+<script>window.APP = {};</script>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="device" id="device">
+    <div class="statusbar"><span id="clock">9:41</span><span class="notch"></span><span>5G ▮▮▮</span></div>
+
+    <!-- Franja de marca: identidad Cálidda. Elemento decorativo, sin función. -->
+    <div class="brandbar">
+      <span class="brandmark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M13.3 2c.5 3-1 4.4-2.4 5.8C9.3 9.4 7.8 10.9 7.8 14a6.2 6.2 0 0 0 12.4 0c0-4.6-3.4-7.3-4.7-9.1C14.6 3.6 14 2.7 13.3 2zm-1.1 12.3c.2 1.3-.5 1.9-1.1 2.5-.6.7-1.3 1.3-1.3 2.6a2.7 2.7 0 0 0 5.4 0c0-2-1.5-3.1-2.1-3.9-.4-.5-.7-.9-.9-1.2z"/></svg>
+      </span>
+      <span class="wordmark">CÁLIDDA</span>
+      <span class="brandtag">Gas natural · Lima y Callao</span>
+    </div>
+
+    <div id="chrome"></div>
+    <main class="screen" id="screen" tabindex="-1"></main>
+    <nav class="tabbar" id="tabbar"></nav>
+    <div id="layer"></div>
+  </div>
+
+  <aside class="side">
+    <h1>Prototipo funcional · App Cálidda</h1>
+    <p>Recibos y pagos de gas natural. Todas las historias de usuario del TB1 funcionan: los montos se calculan, los pagos cambian el estado del suministro y los datos se guardan mientras uses el prototipo.</p>
+    <div class="panel">
+      <h2>Historias de usuario</h2>
+      <div class="hu-list" id="huList"></div>
+    </div>
+    <div class="panel">
+      <h2>Opciones de demostración</h2>
+      <div class="switches">
+        <button class="chip-btn" id="btnWire" aria-pressed="false">Ver como wireframe</button>
+        <button class="chip-btn" id="btnDelay" aria-pressed="false">Simular demora del banco</button>
+        <button class="chip-btn" id="btnReset">Reiniciar datos</button>
+      </div>
+      <small style="display:block;margin-top:10px">Código de aprobación de prueba: cualquier combinación de 6 dígitos. Usa <b>000000</b> para ver el error de código inválido.</small>
+    </div>
+  </aside>
+</div>
+
+<script src="efectos.js"></script>
+
+<!-- Núcleo: se carga antes que las historias -->
+<script src="nucleo/ui.js"></script>
+<script src="nucleo/datos.js"></script>
+<script src="nucleo/navegacion.js"></script>
+
+<!-- Una historia de usuario por archivo -->
+<script src="historias/hu01-estado-de-cuenta.js"></script>
+<script src="historias/hu02-desglose-del-recibo.js"></script>
+<script src="historias/hu03-historico-y-descarga.js"></script>
+<script src="historias/hu04-grafica-de-consumo.js"></script>
+<script src="historias/hu05-metodo-de-pago.js"></script>
+<script src="historias/hu06-confirmacion-del-pago.js"></script>
+<script src="historias/hu07-pago-multirrecibo.js"></script>
+<script src="historias/hu08-alertas-de-vencimiento.js"></script>
+<script src="historias/hu09-asociar-suministro.js"></script>
+<script src="historias/hu10-navegacion-y-datos.js"></script>
+
+<!-- Arranque -->
+<script src="app.js"></script>
+</body>
+</html>
