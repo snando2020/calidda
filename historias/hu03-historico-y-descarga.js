@@ -19,7 +19,7 @@
   A.V.recibos = function (sc) {
     tabbar("recibos"); chrome(appbar("Mis recibos", { left: true }));
     var s = sum();
-    var selector = el("button", { class: "item" });
+    var selector = el("button", { class: "item", style: "flex:none" });
     selector.appendChild(el("div", { class: "col", html: '<span class="tiny">Suministro</span><b>' + s.alias + " · " + s.id + "</b>" }));
     selector.appendChild(el("span", { style: "margin-left:auto;color:var(--ink-3)", html: ICON.chevron }));
     selector.onclick = elegirSuministro;
